@@ -8,11 +8,13 @@ import { ReactComponent as BackArrow } from './back-arrow.svg';
 
 type FlowContainerProps = {
   title?: string;
+  subtitle?: string;
   children?: React.ReactNode;
 };
 
 export const FlowContainer = ({
   title,
+  subtitle,
   children,
 }: FlowContainerProps & RouteComponentProps) => {
   return (
@@ -33,7 +35,12 @@ export const FlowContainer = ({
             className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 fill-current"
           />
         </button>
-        <h1 className="font-header">{title}</h1>
+        <div>
+          <h1 className="font-header">{title}</h1>
+          <h2 className="text-xs text-grey-400 font-semibold uppercase">
+            {subtitle}
+          </h2>
+        </div>
       </div>
       <div className="w-full">{children}</div>
     </div>
